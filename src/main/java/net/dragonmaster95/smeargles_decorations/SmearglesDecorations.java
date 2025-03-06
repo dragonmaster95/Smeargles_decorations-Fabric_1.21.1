@@ -1,5 +1,8 @@
 package net.dragonmaster95.smeargles_decorations;
 
+import net.dragonmaster95.smeargles_decorations.block.ModBlocks;
+import net.dragonmaster95.smeargles_decorations.item.ModItemGroups;
+import net.dragonmaster95.smeargles_decorations.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -11,9 +14,9 @@ public class SmearglesDecorations implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
+		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
+		ModItemGroups.registerItemGroups();
 
 	}
 }

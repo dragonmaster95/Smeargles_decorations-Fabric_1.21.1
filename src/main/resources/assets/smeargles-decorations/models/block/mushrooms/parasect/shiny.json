@@ -1,0 +1,8 @@
+{
+	"credit": "Made with Blockbench by dragonmaster95",
+	"parent": "smeargles-decorations:block/mushrooms/parasect/normal",
+	"texture_size": [16, 32],
+	"textures": {
+		"2": "smeargles-decorations:block/mushrooms/parasect/shiny"
+	}
+}
