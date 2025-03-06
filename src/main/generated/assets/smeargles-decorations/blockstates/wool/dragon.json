@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "smeargles-decorations:block/wool/dragon",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "smeargles-decorations:block/wool/dragon"
+    },
+    "facing=south": {
+      "model": "smeargles-decorations:block/wool/dragon",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "smeargles-decorations:block/wool/dragon",
+      "y": 270
+    }
+  }
+}

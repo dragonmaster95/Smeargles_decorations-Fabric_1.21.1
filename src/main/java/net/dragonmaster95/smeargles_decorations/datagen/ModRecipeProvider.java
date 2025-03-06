@@ -21,16 +21,18 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         super(output, registriesFuture);
     }
 
+    private List<String> colors = List.of("BLACK","GRAY","LIGHT_GRAY","BROWN","RED","ORANGE","YELLOW","LIME","GREEN","LIGHT_BLUE","CYAN","BLUE","PURPLE","MAGENTA","PINK");
+
     @Override
     public void generate(RecipeExporter recipeExporter) {
-        List<ItemConvertible> WASHABLES_WOOL = List.of(ModItems.EXAMPLE, ModItems.EXAMPLE2);
+        List<ItemConvertible> WASHABLES_WOOL = List.of();
 
         offerSmelting(recipeExporter, WASHABLES_WOOL, RecipeCategory.MISC, Items.WHITE_WOOL, 0.25f, 100, "");
     }
 
 
-
+    /*
     public static void offerWashing(RecipeExporter exporter, List<ItemConvertible> inputs, RecipeCategory category, ItemConvertible output, float experience, int cookingTime, String group) {
         offerMultipleOptions(exporter, RecipeSerializer.WASHING, SmeltingRecipe::new, inputs, category, output, experience, cookingTime, group, "_from_smelting");
-    }
+    }*/
 }

@@ -26,6 +26,42 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     @Override
     public void generate() {
         addDrop(ModBlocks.ROTOM_WASH);
+        addDrop(ModBlocks.NORMAL_WOOL);
+        addDrop(ModBlocks.NORMAL_CUSHION);
+        addDrop(ModBlocks.FIGHTING_WOOL);
+        addDrop(ModBlocks.FIGHTING_CUSHION);
+        addDrop(ModBlocks.FLYING_WOOL);
+        addDrop(ModBlocks.FLYING_CUSHION);
+        addDrop(ModBlocks.BUG_WOOL);
+        addDrop(ModBlocks.BUG_CUSHION);
+        addDrop(ModBlocks.POISON_WOOL);
+        addDrop(ModBlocks.POISON_CUSHION);
+        addDrop(ModBlocks.GROUND_WOOL);
+        addDrop(ModBlocks.GROUND_CUSHION);
+        addDrop(ModBlocks.ROCK_WOOL);
+        addDrop(ModBlocks.ROCK_CUSHION);
+        addDrop(ModBlocks.FIRE_WOOL);
+        addDrop(ModBlocks.FIRE_CUSHION);
+        addDrop(ModBlocks.WATER_WOOL);
+        addDrop(ModBlocks.WATER_CUSHION);
+        addDrop(ModBlocks.GRASS_WOOL);
+        addDrop(ModBlocks.GRASS_CUSHION);
+        addDrop(ModBlocks.ELECTRIC_WOOL);
+        addDrop(ModBlocks.ELECTRIC_CUSHION);
+        addDrop(ModBlocks.ICE_WOOL);
+        addDrop(ModBlocks.ICE_CUSHION);
+        addDrop(ModBlocks.GHOST_WOOL);
+        addDrop(ModBlocks.GHOST_CUSHION);
+        addDrop(ModBlocks.PSYCHIC_WOOL);
+        addDrop(ModBlocks.PSYCHIC_CUSHION);
+        addDrop(ModBlocks.DRAGON_WOOL);
+        addDrop(ModBlocks.DRAGON_CUSHION);
+        addDrop(ModBlocks.DARK_WOOL);
+        addDrop(ModBlocks.DARK_CUSHION);
+        addDrop(ModBlocks.STEEL_WOOL);
+        addDrop(ModBlocks.STEEL_CUSHION);
+        addDrop(ModBlocks.FAIRY_WOOL);
+        addDrop(ModBlocks.FAIRY_CUSHION);
 
         //addDrop(ModBlocks.ORE_BLOCK, multipleOreDrops(ModBlocks.ORE_BLOCK, ModItems.ORE_ITEM, 2, 7));
     }

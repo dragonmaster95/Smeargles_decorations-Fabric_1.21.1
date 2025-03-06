@@ -9,5 +9,5 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 
 public interface WashingSerializer<T extends RecipeSerializer<?>> {
-    RecipeSerializer<ShapedRecipe> WASHING = register("washing", new WashingRecipe.Serializer());
+    //RecipeSerializer<ShapedRecipe> WASHING = register("washing", new WashingRecipe.Serializer());
 }
