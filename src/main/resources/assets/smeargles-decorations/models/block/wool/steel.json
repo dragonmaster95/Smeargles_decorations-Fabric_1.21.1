@@ -1,0 +1,6 @@
+{
+    "parent": "smeargles-decorations:block/wool/display",
+    "textures": {
+        "all": "smeargles-decorations:block/cushion/steel"
+    }
+}

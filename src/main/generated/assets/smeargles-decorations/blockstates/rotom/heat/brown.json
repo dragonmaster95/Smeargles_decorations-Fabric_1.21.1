@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,open=false": {
+      "model": "smeargles-decorations:block/rotom/heat/brown",
+      "y": 90
+    },
+    "facing=east,open=true": {
+      "model": "smeargles-decorations:block/rotom/heat/open/brown",
+      "y": 90
+    },
+    "facing=north,open=false": {
+      "model": "smeargles-decorations:block/rotom/heat/brown"
+    },
+    "facing=north,open=true": {
+      "model": "smeargles-decorations:block/rotom/heat/open/brown"
+    },
+    "facing=south,open=false": {
+      "model": "smeargles-decorations:block/rotom/heat/brown",
+      "y": 180
+    },
+    "facing=south,open=true": {
+      "model": "smeargles-decorations:block/rotom/heat/open/brown",
+      "y": 180
+    },
+    "facing=west,open=false": {
+      "model": "smeargles-decorations:block/rotom/heat/brown",
+      "y": 270
+    },
+    "facing=west,open=true": {
+      "model": "smeargles-decorations:block/rotom/heat/open/brown",
+      "y": 270
+    }
+  }
+}

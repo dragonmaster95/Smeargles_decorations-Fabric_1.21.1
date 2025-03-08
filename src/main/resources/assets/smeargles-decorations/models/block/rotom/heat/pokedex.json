@@ -1,0 +1,7 @@
+{
+    "parent": "smeargles-decorations:block/rotom/heat/base",
+    "textures": {
+        "0": "smeargles-decorations:block/rotom/heat_variations/2",
+        "particle": "smeargles-decorations:block/rotom/heat_variations/2"
+    }
+}

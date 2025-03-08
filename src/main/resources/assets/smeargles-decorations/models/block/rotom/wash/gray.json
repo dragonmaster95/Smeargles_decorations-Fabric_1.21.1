@@ -1,0 +1,7 @@
+{
+    "parent": "smeargles-decorations:block/rotom/wash/base",
+    "textures": {
+        "0": "smeargles-decorations:block/rotom/wash_variations/5",
+        "particle": "smeargles-decorations:block/rotom/wash_variations/5"
+    }
+}

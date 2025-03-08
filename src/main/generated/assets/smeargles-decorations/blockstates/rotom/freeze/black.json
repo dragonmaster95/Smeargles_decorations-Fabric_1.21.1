@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "smeargles-decorations:block/rotom/freeze/black",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "smeargles-decorations:block/rotom/freeze/black"
+    },
+    "facing=south": {
+      "model": "smeargles-decorations:block/rotom/freeze/black",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "smeargles-decorations:block/rotom/freeze/black",
+      "y": 270
+    }
+  }
+}

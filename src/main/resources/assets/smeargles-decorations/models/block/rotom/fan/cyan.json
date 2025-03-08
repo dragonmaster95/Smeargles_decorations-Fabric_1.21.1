@@ -1,0 +1,8 @@
+{
+    "parent": "smeargles-decorations:block/rotom/fan/on/base",
+    "textures": {
+        "0": "smeargles-decorations:block/rotom/fan_variations/13",
+        "1": "smeargles-decorations:block/rotom/fan_still",
+        "particle": "smeargles-decorations:block/rotom/fan_variations/13"
+    }
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "smeargles-decorations:block/rotom/freeze/magenta",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "smeargles-decorations:block/rotom/freeze/magenta"
+    },
+    "facing=south": {
+      "model": "smeargles-decorations:block/rotom/freeze/magenta",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "smeargles-decorations:block/rotom/freeze/magenta",
+      "y": 270
+    }
+  }
+}

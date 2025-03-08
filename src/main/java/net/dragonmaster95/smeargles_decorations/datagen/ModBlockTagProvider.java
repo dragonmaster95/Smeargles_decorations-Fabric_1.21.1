@@ -3,8 +3,12 @@ package net.dragonmaster95.smeargles_decorations.datagen;
 import net.dragonmaster95.smeargles_decorations.block.ModBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.block.Block;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.registry.tag.TagKey;
+import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -15,6 +19,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+                
         getOrCreateTagBuilder(BlockTags.WOOL)
                 .add(ModBlocks.NORMAL_WOOL)
                 .add(ModBlocks.FIGHTING_WOOL)
@@ -55,7 +60,102 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.STEEL_CUSHION)
                 .add(ModBlocks.FAIRY_CUSHION);
 
-        /*getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
-                .add(ModBlocks.ROTOM_WASH);*/
+        getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
+                .add(ModBlocks.ROTOM_WASH_ROTOM)
+                .add(ModBlocks.ROTOM_WASH_SHINY)
+                .add(ModBlocks.ROTOM_WASH_POKEDEX)
+                .add(ModBlocks.ROTOM_WASH_WHITE)
+                .add(ModBlocks.ROTOM_WASH_LIGHT_GRAY)
+                .add(ModBlocks.ROTOM_WASH_GRAY)
+                .add(ModBlocks.ROTOM_WASH_BLACK)
+                .add(ModBlocks.ROTOM_WASH_BROWN)
+                .add(ModBlocks.ROTOM_WASH_RED)
+                .add(ModBlocks.ROTOM_WASH_ORANGE)
+                .add(ModBlocks.ROTOM_WASH_YELLOW)
+                .add(ModBlocks.ROTOM_WASH_LIME)
+                .add(ModBlocks.ROTOM_WASH_GREEN)
+                .add(ModBlocks.ROTOM_WASH_CYAN)
+                .add(ModBlocks.ROTOM_WASH_LIGHT_BLUE)
+                .add(ModBlocks.ROTOM_WASH_BLUE)
+                .add(ModBlocks.ROTOM_WASH_PURPLE)
+                .add(ModBlocks.ROTOM_WASH_MAGENTA)
+                .add(ModBlocks.ROTOM_WASH_PINK)
+                .add(ModBlocks.ROTOM_FREEZE_ROTOM)
+                .add(ModBlocks.ROTOM_FREEZE_SHINY)
+                .add(ModBlocks.ROTOM_FREEZE_POKEDEX)
+                .add(ModBlocks.ROTOM_FREEZE_WHITE)
+                .add(ModBlocks.ROTOM_FREEZE_LIGHT_GRAY)
+                .add(ModBlocks.ROTOM_FREEZE_GRAY)
+                .add(ModBlocks.ROTOM_FREEZE_BLACK)
+                .add(ModBlocks.ROTOM_FREEZE_BROWN)
+                .add(ModBlocks.ROTOM_FREEZE_RED)
+                .add(ModBlocks.ROTOM_FREEZE_ORANGE)
+                .add(ModBlocks.ROTOM_FREEZE_YELLOW)
+                .add(ModBlocks.ROTOM_FREEZE_LIME)
+                .add(ModBlocks.ROTOM_FREEZE_GREEN)
+                .add(ModBlocks.ROTOM_FREEZE_CYAN)
+                .add(ModBlocks.ROTOM_FREEZE_LIGHT_BLUE)
+                .add(ModBlocks.ROTOM_FREEZE_BLUE)
+                .add(ModBlocks.ROTOM_FREEZE_PURPLE)
+                .add(ModBlocks.ROTOM_FREEZE_MAGENTA)
+                .add(ModBlocks.ROTOM_FREEZE_PINK)
+                .add(ModBlocks.ROTOM_MOW_ROTOM)
+                .add(ModBlocks.ROTOM_MOW_SHINY)
+                .add(ModBlocks.ROTOM_MOW_POKEDEX)
+                .add(ModBlocks.ROTOM_MOW_WHITE)
+                .add(ModBlocks.ROTOM_MOW_LIGHT_GRAY)
+                .add(ModBlocks.ROTOM_MOW_GRAY)
+                .add(ModBlocks.ROTOM_MOW_BLACK)
+                .add(ModBlocks.ROTOM_MOW_BROWN)
+                .add(ModBlocks.ROTOM_MOW_RED)
+                .add(ModBlocks.ROTOM_MOW_ORANGE)
+                .add(ModBlocks.ROTOM_MOW_YELLOW)
+                .add(ModBlocks.ROTOM_MOW_LIME)
+                .add(ModBlocks.ROTOM_MOW_GREEN)
+                .add(ModBlocks.ROTOM_MOW_CYAN)
+                .add(ModBlocks.ROTOM_MOW_LIGHT_BLUE)
+                .add(ModBlocks.ROTOM_MOW_BLUE)
+                .add(ModBlocks.ROTOM_MOW_PURPLE)
+                .add(ModBlocks.ROTOM_MOW_MAGENTA)
+                .add(ModBlocks.ROTOM_MOW_PINK)
+                .add(ModBlocks.ROTOM_HEAT_ROTOM)
+                .add(ModBlocks.ROTOM_HEAT_SHINY)
+                .add(ModBlocks.ROTOM_HEAT_POKEDEX)
+                .add(ModBlocks.ROTOM_HEAT_WHITE)
+                .add(ModBlocks.ROTOM_HEAT_LIGHT_GRAY)
+                .add(ModBlocks.ROTOM_HEAT_GRAY)
+                .add(ModBlocks.ROTOM_HEAT_BLACK)
+                .add(ModBlocks.ROTOM_HEAT_BROWN)
+                .add(ModBlocks.ROTOM_HEAT_RED)
+                .add(ModBlocks.ROTOM_HEAT_ORANGE)
+                .add(ModBlocks.ROTOM_HEAT_YELLOW)
+                .add(ModBlocks.ROTOM_HEAT_LIME)
+                .add(ModBlocks.ROTOM_HEAT_GREEN)
+                .add(ModBlocks.ROTOM_HEAT_CYAN)
+                .add(ModBlocks.ROTOM_HEAT_LIGHT_BLUE)
+                .add(ModBlocks.ROTOM_HEAT_BLUE)
+                .add(ModBlocks.ROTOM_HEAT_PURPLE)
+                .add(ModBlocks.ROTOM_HEAT_MAGENTA)
+                .add(ModBlocks.ROTOM_HEAT_PINK)
+                .add(ModBlocks.ROTOM_FAN_ROTOM)
+                .add(ModBlocks.ROTOM_FAN_SHINY)
+                .add(ModBlocks.ROTOM_FAN_POKEDEX)
+                .add(ModBlocks.ROTOM_FAN_WHITE)
+                .add(ModBlocks.ROTOM_FAN_LIGHT_GRAY)
+                .add(ModBlocks.ROTOM_FAN_GRAY)
+                .add(ModBlocks.ROTOM_FAN_BLACK)
+                .add(ModBlocks.ROTOM_FAN_BROWN)
+                .add(ModBlocks.ROTOM_FAN_RED)
+                .add(ModBlocks.ROTOM_FAN_ORANGE)
+                .add(ModBlocks.ROTOM_FAN_YELLOW)
+                .add(ModBlocks.ROTOM_FAN_LIME)
+                .add(ModBlocks.ROTOM_FAN_GREEN)
+                .add(ModBlocks.ROTOM_FAN_CYAN)
+                .add(ModBlocks.ROTOM_FAN_LIGHT_BLUE)
+                .add(ModBlocks.ROTOM_FAN_BLUE)
+                .add(ModBlocks.ROTOM_FAN_PURPLE)
+                .add(ModBlocks.ROTOM_FAN_MAGENTA)
+                .add(ModBlocks.ROTOM_FAN_PINK)
+                ;
     }
 }

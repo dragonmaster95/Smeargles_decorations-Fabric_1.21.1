@@ -1,6 +1,7 @@
 package net.dragonmaster95.smeargles_decorations;
 
 import net.dragonmaster95.smeargles_decorations.block.ModBlocks;
+import net.dragonmaster95.smeargles_decorations.block.entity.ModBlockEntities;
 import net.dragonmaster95.smeargles_decorations.item.ModItemGroups;
 import net.dragonmaster95.smeargles_decorations.item.ModItems;
 import net.fabricmc.api.ModInitializer;
@@ -17,6 +18,6 @@ public class SmearglesDecorations implements ModInitializer {
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModItemGroups.registerItemGroups();
-
+		ModBlockEntities.registerBlockEntities();
 	}
 }
