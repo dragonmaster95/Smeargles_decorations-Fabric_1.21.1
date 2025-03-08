@@ -1,39 +1,19 @@
 package net.dragonmaster95.smeargles_decorations.block.custom;
 
-import com.mojang.serialization.MapCodec;
 import net.dragonmaster95.smeargles_decorations.block.entity.custom.RotomHeatBlockEntity;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.*;
-import net.minecraft.component.DataComponentTypes;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.item.ItemStack;
-import net.minecraft.loot.context.LootContext;
-import net.minecraft.registry.Registry;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.ScreenHandler;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.stat.Stats;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
-import net.minecraft.text.Text;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
-import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.ArrayList;
 
 public class RotomHeat extends SmokerBlock {
     public static final BooleanProperty OPEN = Properties.OPEN;
@@ -79,13 +59,13 @@ public class RotomHeat extends SmokerBlock {
         return ScreenHandler.calculateComparatorOutput(world.getBlockEntity(pos));
     }
 
-    /*@Override
+    @Override
     protected void openScreen(World world, BlockPos pos, PlayerEntity player) {
         BlockEntity blockEntity = world.getBlockEntity(pos);
-        if (blockEntity instanceof SmokerBlockEntity) {
+        if (blockEntity instanceof RotomHeatBlockEntity) {
             player.openHandledScreen((NamedScreenHandlerFactory)blockEntity);
-            player.incrementStat(INTERACT_WITH_ROTOM_HEAT);
+            //player.incrementStat(INTERACT_WITH_ROTOM_HEAT);
         }
-    }*/
+    }
 
 }
