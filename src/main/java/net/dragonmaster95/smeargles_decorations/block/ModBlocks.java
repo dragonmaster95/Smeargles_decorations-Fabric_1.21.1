@@ -10,6 +10,8 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
+import static net.minecraft.block.Blocks.createLightLevelFromLitBlockState;
+
 public class ModBlocks {
 
     //Rotom wash
@@ -241,6 +243,7 @@ public class ModBlocks {
                         .requiresTool()
                         .nonOpaque()
                         .strength(5.0F, 6.0F)
+                        .luminance(createLightLevelFromLitBlockState(13))
                         .sounds(BlockSoundGroup.METAL)
                 )
         );

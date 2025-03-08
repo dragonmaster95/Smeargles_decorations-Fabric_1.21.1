@@ -1,5 +1,5 @@
 {
-    "parent": "smeargles-decorations:block/rotom/heat/base_open",
+    "parent": "smeargles-decorations:block/rotom/heat/open/base",
     "textures": {
         "0": "smeargles-decorations:block/rotom/heat_variations/16",
         "particle": "smeargles-decorations:block/rotom/heat_variations/16"
