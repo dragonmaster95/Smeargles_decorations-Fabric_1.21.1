@@ -1,28 +1,16 @@
 package net.dragonmaster95.smeargles_decorations.datagen;
 
-import com.google.gson.JsonElement;
-import com.mojang.datafixers.util.Pair;
 import net.dragonmaster95.smeargles_decorations.block.ModBlocks;
 import net.dragonmaster95.smeargles_decorations.block.custom.TwoStateFlower;
-import net.dragonmaster95.smeargles_decorations.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.data.DataProvider;
 import net.minecraft.data.client.*;
 import net.minecraft.data.client.BlockStateModelGenerator.TintType;
 import net.minecraft.registry.Registries;
-import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.StringIdentifiable;
-import net.minecraft.util.math.Direction;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.function.BiConsumer;
-import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 
 import static net.minecraft.data.client.BlockStateModelGenerator.*;
@@ -104,6 +92,8 @@ public class ModModelProvider extends FabricModelProvider {
         registerPottableTwoStateFlower(blockStateModelGenerator,ModBlocks.FLOETTE_BLUE,ModBlocks.FLOETTE_BLUE_POTTED,BlockStateModelGenerator.TintType.NOT_TINTED);
         registerPottableTwoStateFlower(blockStateModelGenerator,ModBlocks.FLOETTE_PINK,ModBlocks.FLOETTE_PINK_POTTED,BlockStateModelGenerator.TintType.NOT_TINTED);
         registerPottableTwoStateFlower(blockStateModelGenerator,ModBlocks.FLOETTE_AZ,ModBlocks.FLOETTE_AZ_POTTED,BlockStateModelGenerator.TintType.NOT_TINTED);
+
+        registerPottableTwoStateFlower(blockStateModelGenerator,ModBlocks.GRACIDEA,ModBlocks.GRACIDEA_POTTED,BlockStateModelGenerator.TintType.NOT_TINTED);
 
         registerRotomFan(blockStateModelGenerator,ModBlocks.ROTOM_FAN_ROTOM);
         registerRotomFan(blockStateModelGenerator,ModBlocks.ROTOM_FAN_SHINY);

@@ -23,13 +23,14 @@ import static net.minecraft.block.Blocks.createLightLevelFromLitBlockState;
 public class ModBlocks {
 
 
-    public static final Block FLOETTE_WHITE = flowerBlock("flowers/floette/white", MapColor.WHITE, StatusEffects.LUCK, 60);
-    public static final Block FLOETTE_RED = flowerBlock("flowers/floette/red", MapColor.RED, StatusEffects.LUCK, 60);
-    public static final Block FLOETTE_ORANGE = flowerBlock("flowers/floette/orange", MapColor.ORANGE, StatusEffects.LUCK, 60);
-    public static final Block FLOETTE_YELLOW = flowerBlock("flowers/floette/yellow", MapColor.PALE_YELLOW, StatusEffects.LUCK, 60);
-    public static final Block FLOETTE_BLUE = flowerBlock("flowers/floette/blue", MapColor.LIGHT_BLUE, StatusEffects.LUCK, 60);
-    public static final Block FLOETTE_PINK = flowerBlock("flowers/floette/pink", MapColor.PINK, StatusEffects.LUCK, 60);
-    public static final Block FLOETTE_AZ = flowerBlock("flowers/floette/az", MapColor.PINK, StatusEffects.UNLUCK, 60);
+    public static final Block FLOETTE_WHITE = flowerBlock("flowers/floette/white", MapColor.WHITE, StatusEffects.REGENERATION, 3);
+    public static final Block FLOETTE_RED = flowerBlock("flowers/floette/red", MapColor.RED, StatusEffects.REGENERATION, 3);
+    public static final Block FLOETTE_ORANGE = flowerBlock("flowers/floette/orange", MapColor.ORANGE, StatusEffects.REGENERATION, 3);
+    public static final Block FLOETTE_YELLOW = flowerBlock("flowers/floette/yellow", MapColor.PALE_YELLOW, StatusEffects.REGENERATION, 3);
+    public static final Block FLOETTE_BLUE = flowerBlock("flowers/floette/blue", MapColor.LIGHT_BLUE, StatusEffects.REGENERATION, 3);
+    public static final Block FLOETTE_PINK = flowerBlock("flowers/floette/pink", MapColor.PINK, StatusEffects.REGENERATION, 3);
+    public static final Block FLOETTE_AZ = flowerBlock("flowers/floette/az", MapColor.PINK, StatusEffects.WITHER, 3);
+    public static final Block GRACIDEA = flowerBlock("flowers/gracidea", MapColor.PINK, StatusEffects.LUCK, 60);
 
     public static final Block FLOETTE_WHITE_POTTED = registerBlock("flowers/floette/white_potted", createFlowerPotBlock(FLOETTE_WHITE));
     public static final Block FLOETTE_RED_POTTED = registerBlock("flowers/floette/red_potted", createFlowerPotBlock(FLOETTE_RED));
@@ -38,6 +39,7 @@ public class ModBlocks {
     public static final Block FLOETTE_BLUE_POTTED = registerBlock("flowers/floette/blue_potted", createFlowerPotBlock(FLOETTE_BLUE));
     public static final Block FLOETTE_PINK_POTTED = registerBlock("flowers/floette/pink_potted", createFlowerPotBlock(FLOETTE_PINK));
     public static final Block FLOETTE_AZ_POTTED = registerBlock("flowers/floette/az_potted", createFlowerPotBlock(FLOETTE_AZ));
+    public static final Block GRACIDEA_POTTED = registerBlock("flowers/gracidea_potted", createFlowerPotBlock(GRACIDEA));
 
     //Rotom wash
     public static final Block ROTOM_WASH_ROTOM = rotomWashBlock("rotom/wash/rotom",MapColor.TERRACOTTA_ORANGE);
