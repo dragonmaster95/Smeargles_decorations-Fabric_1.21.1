@@ -1,5 +1,28 @@
 {
-  "itemgroup.tutorialmod.smeargles_decorations": "Smeargles Decorations",
+  "itemgroup.tutorialmod.smeargles-decorations": "Smeargles Decorations",
 
-  "block.smeargles-decorations.rotom_wash": "Rotom Washing Machine"
+  "block.smeargles-decorations.rotom_wash": "Rotom Washing Machine",
+
+  "painting.smeargles-decorations.aerodactyl_broken.title": "Aerodactyl (Broken)",
+  "painting.smeargles-decorations.aerodactyl_fixed.title": "Aerodactyl (Fixed)",
+  "painting.smeargles-decorations.ho-oh_broken.title": "Aerodactyl (Broken)",
+  "painting.smeargles-decorations.ho-oh_fixed.title": "Aerodactyl (Fixed)",
+  "painting.smeargles-decorations.kabuto_broken.title": "Aerodactyl (Broken)",
+  "painting.smeargles-decorations.kabuto_fixed.title": "Aerodactyl (Fixed)",
+  "painting.smeargles-decorations.omanite_broken.title": "Aerodactyl (Broken)",
+  "painting.smeargles-decorations.omanite_fixed.title": "Aerodactyl (Fixed)",
+  "painting.smeargles-decorations.tower_of_time_gears_broken.title": "Tower of time (Broken)",
+  "painting.smeargles-decorations.tower_of_time_gears_fixed.title": "Tower of time (Fixed)",
+  
+
+  "painting.smeargles-decorations.aerodactyl_broken.author": "dragonmaster95",
+  "painting.smeargles-decorations.aerodactyl_fixed.author": "dragonmaster95",
+  "painting.smeargles-decorations.ho-oh_broken.author": "dragonmaster95",
+  "painting.smeargles-decorations.ho-oh_fixed.author": "dragonmaster95",
+  "painting.smeargles-decorations.kabuto_broken.author": "dragonmaster95",
+  "painting.smeargles-decorations.kabuto_fixed.author": "dragonmaster95",
+  "painting.smeargles-decorations.omanite_broken.author": "dragonmaster95",
+  "painting.smeargles-decorations.omanite_fixed.author": "dragonmaster95",
+  "painting.smeargles-decorations.tower_of_time_gears_broken.author": "dragonmaster95",
+  "painting.smeargles-decorations.tower_of_time_gears_fixed.author": "dragonmaster95"
 }

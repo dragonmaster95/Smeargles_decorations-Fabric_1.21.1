@@ -2,14 +2,14 @@ package net.dragonmaster95.smeargles_decorations.block.entity;
 
 import net.dragonmaster95.smeargles_decorations.SmearglesDecorations;
 import net.dragonmaster95.smeargles_decorations.block.ModBlocks;
-import net.dragonmaster95.smeargles_decorations.block.entity.custom.RotomHeatBlockEntity;
+import net.dragonmaster95.smeargles_decorations.block.entity.custom.RotomHeatBE_old;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class ModBlockEntities {
-    public static final BlockEntityType<RotomHeatBlockEntity> ROTOM_HEAT_BE =
+    public static final BlockEntityType<RotomHeatBE_old> ROTOM_HEAT_BE =
             Registry.register(
                     Registries.BLOCK_ENTITY_TYPE,
                     Identifier.of(
@@ -17,7 +17,7 @@ public class ModBlockEntities {
                             "rotom_heat_be"
                     ),
                     BlockEntityType.Builder.create(
-                            RotomHeatBlockEntity::new,
+                            RotomHeatBE_old::new,
                             ModBlocks.ROTOM_HEAT_ROTOM,
                             ModBlocks.ROTOM_HEAT_SHINY,
                             ModBlocks.ROTOM_HEAT_POKEDEX,

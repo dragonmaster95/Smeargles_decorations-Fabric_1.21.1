@@ -14,5 +14,7 @@ public class SmearglesDecorationsDataGenerator implements DataGeneratorEntrypoin
 		pack.addProvider(ModLootTableProvider::new);
 		pack.addProvider(ModModelProvider::new);
 		pack.addProvider(ModRecipeProvider::new);
+		//pack.addProvider(ModLangEn::new);
+
 	}
 }

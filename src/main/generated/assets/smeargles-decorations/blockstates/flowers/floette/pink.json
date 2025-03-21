@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,flower_bed=false": {
+      "model": "smeargles-decorations:block/flowers/floette/pink",
+      "y": 90
+    },
+    "facing=east,flower_bed=true": {
+      "model": "smeargles-decorations:block/flowers/floette/pink_bed",
+      "y": 90
+    },
+    "facing=north,flower_bed=false": {
+      "model": "smeargles-decorations:block/flowers/floette/pink"
+    },
+    "facing=north,flower_bed=true": {
+      "model": "smeargles-decorations:block/flowers/floette/pink_bed"
+    },
+    "facing=south,flower_bed=false": {
+      "model": "smeargles-decorations:block/flowers/floette/pink",
+      "y": 180
+    },
+    "facing=south,flower_bed=true": {
+      "model": "smeargles-decorations:block/flowers/floette/pink_bed",
+      "y": 180
+    },
+    "facing=west,flower_bed=false": {
+      "model": "smeargles-decorations:block/flowers/floette/pink",
+      "y": 270
+    },
+    "facing=west,flower_bed=true": {
+      "model": "smeargles-decorations:block/flowers/floette/pink_bed",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "smeargles-decorations:block/flowers/floette/base_potted",
+    "textures": {
+        "0": "smeargles-decorations:block/flowers/floette_variations/1",
+        "particle": "smeargles-decorations:block/flowers/floette_variations/1"
+    }
+}

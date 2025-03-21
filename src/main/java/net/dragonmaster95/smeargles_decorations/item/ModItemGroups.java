@@ -151,6 +151,14 @@ public class ModItemGroups {
                         entries.add(ModBlocks.DARK_CUSHION);
                         entries.add(ModBlocks.STEEL_CUSHION);
                         entries.add(ModBlocks.FAIRY_CUSHION);
+
+                        entries.add(ModBlocks.FLOETTE_WHITE);
+                        entries.add(ModBlocks.FLOETTE_RED);
+                        entries.add(ModBlocks.FLOETTE_ORANGE);
+                        entries.add(ModBlocks.FLOETTE_YELLOW);
+                        entries.add(ModBlocks.FLOETTE_BLUE);
+                        entries.add(ModBlocks.FLOETTE_PINK);
+                        entries.add(ModBlocks.FLOETTE_AZ);
                     }))
                     .build());
 

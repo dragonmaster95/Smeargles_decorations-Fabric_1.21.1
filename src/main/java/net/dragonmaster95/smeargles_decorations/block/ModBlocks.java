@@ -3,16 +3,41 @@ package net.dragonmaster95.smeargles_decorations.block;
 import net.dragonmaster95.smeargles_decorations.SmearglesDecorations;
 import net.dragonmaster95.smeargles_decorations.block.custom.*;
 import net.minecraft.block.*;
+import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static net.minecraft.block.Blocks.createFlowerPotBlock;
 import static net.minecraft.block.Blocks.createLightLevelFromLitBlockState;
 
 public class ModBlocks {
+
+
+    public static final Block FLOETTE_WHITE = flowerBlock("flowers/floette/white", MapColor.WHITE, StatusEffects.LUCK, 60);
+    public static final Block FLOETTE_RED = flowerBlock("flowers/floette/red", MapColor.RED, StatusEffects.LUCK, 60);
+    public static final Block FLOETTE_ORANGE = flowerBlock("flowers/floette/orange", MapColor.ORANGE, StatusEffects.LUCK, 60);
+    public static final Block FLOETTE_YELLOW = flowerBlock("flowers/floette/yellow", MapColor.PALE_YELLOW, StatusEffects.LUCK, 60);
+    public static final Block FLOETTE_BLUE = flowerBlock("flowers/floette/blue", MapColor.LIGHT_BLUE, StatusEffects.LUCK, 60);
+    public static final Block FLOETTE_PINK = flowerBlock("flowers/floette/pink", MapColor.PINK, StatusEffects.LUCK, 60);
+    public static final Block FLOETTE_AZ = flowerBlock("flowers/floette/az", MapColor.PINK, StatusEffects.UNLUCK, 60);
+
+    public static final Block FLOETTE_WHITE_POTTED = registerBlock("flowers/floette/white_potted", createFlowerPotBlock(FLOETTE_WHITE));
+    public static final Block FLOETTE_RED_POTTED = registerBlock("flowers/floette/red_potted", createFlowerPotBlock(FLOETTE_RED));
+    public static final Block FLOETTE_ORANGE_POTTED = registerBlock("flowers/floette/orange_potted", createFlowerPotBlock(FLOETTE_ORANGE));
+    public static final Block FLOETTE_YELLOW_POTTED = registerBlock("flowers/floette/yellow_potted", createFlowerPotBlock(FLOETTE_YELLOW));
+    public static final Block FLOETTE_BLUE_POTTED = registerBlock("flowers/floette/blue_potted", createFlowerPotBlock(FLOETTE_BLUE));
+    public static final Block FLOETTE_PINK_POTTED = registerBlock("flowers/floette/pink_potted", createFlowerPotBlock(FLOETTE_PINK));
+    public static final Block FLOETTE_AZ_POTTED = registerBlock("flowers/floette/az_potted", createFlowerPotBlock(FLOETTE_AZ));
 
     //Rotom wash
     public static final Block ROTOM_WASH_ROTOM = rotomWashBlock("rotom/wash/rotom",MapColor.TERRACOTTA_ORANGE);
@@ -76,9 +101,8 @@ public class ModBlocks {
     public static final Block ROTOM_MOW_PURPLE = rotomMowBlock("rotom/mow/purple",MapColor.PURPLE);
     public static final Block ROTOM_MOW_MAGENTA = rotomMowBlock("rotom/mow/magenta",MapColor.MAGENTA);
     public static final Block ROTOM_MOW_PINK = rotomMowBlock("rotom/mow/pink",MapColor.PINK);
-    
-    //Rotom Heat
-    public static final Block ROTOM_HEAT_ROTOM = rotomHeatBlock("rotom/heat/rotom",MapColor.TERRACOTTA_ORANGE);
+
+    public static final Block ROTOM_HEAT_ROTOM = rotomHeatBlock("rotom/heat/rotom",MapColor.TERRACOTTA_RED);
     public static final Block ROTOM_HEAT_SHINY = rotomHeatBlock("rotom/heat/shiny",MapColor.TERRACOTTA_RED);
     public static final Block ROTOM_HEAT_POKEDEX = rotomHeatBlock("rotom/heat/pokedex",MapColor.BRIGHT_RED);
     public static final Block ROTOM_HEAT_WHITE = rotomHeatBlock("rotom/heat/white",MapColor.WHITE);
@@ -97,6 +121,8 @@ public class ModBlocks {
     public static final Block ROTOM_HEAT_PURPLE = rotomHeatBlock("rotom/heat/purple",MapColor.PURPLE);
     public static final Block ROTOM_HEAT_MAGENTA = rotomHeatBlock("rotom/heat/magenta",MapColor.MAGENTA);
     public static final Block ROTOM_HEAT_PINK = rotomHeatBlock("rotom/heat/pink",MapColor.PINK);
+
+    public static final List<Block> ROTOM_HEAT_BLOCKS = List.of(ROTOM_HEAT_SHINY, ROTOM_HEAT_POKEDEX, ROTOM_HEAT_WHITE, ROTOM_HEAT_LIGHT_GRAY, ROTOM_HEAT_GRAY, ROTOM_HEAT_BLACK, ROTOM_HEAT_BROWN, ROTOM_HEAT_RED, ROTOM_HEAT_ORANGE, ROTOM_HEAT_YELLOW, ROTOM_HEAT_LIME, ROTOM_HEAT_GREEN, ROTOM_HEAT_CYAN, ROTOM_HEAT_LIGHT_BLUE, ROTOM_HEAT_BLUE, ROTOM_HEAT_PURPLE, ROTOM_HEAT_MAGENTA, ROTOM_HEAT_PINK);
 
     //Rotom Fan
     public static final Block ROTOM_FAN_ROTOM = rotomFanBlock("rotom/fan/rotom",MapColor.TERRACOTTA_ORANGE);
@@ -178,6 +204,17 @@ public class ModBlocks {
     public static void registerModBlocks() {
         SmearglesDecorations.LOGGER.info("Registering Mod Blocks for "+ SmearglesDecorations.MOD_ID);
 
+    }
+
+    
+    public static Block flowerBlock(String id, MapColor color, RegistryEntry<StatusEffect> effect, int duration) {
+        return registerBlock(id,
+            new TwoStateFlower(effect, duration, AbstractBlock.Settings
+                    .copy(Blocks.POPPY)
+                    .mapColor(color)
+                    .offset(AbstractBlock.OffsetType.XYZ)
+            )
+        );
     }
 
     public static Block woolBlock(String id, MapColor color) {

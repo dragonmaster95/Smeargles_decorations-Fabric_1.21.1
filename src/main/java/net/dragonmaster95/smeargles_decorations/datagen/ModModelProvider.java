@@ -1,17 +1,26 @@
 package net.dragonmaster95.smeargles_decorations.datagen;
 
 import com.google.gson.JsonElement;
+import com.mojang.datafixers.util.Pair;
 import net.dragonmaster95.smeargles_decorations.block.ModBlocks;
+import net.dragonmaster95.smeargles_decorations.block.custom.TwoStateFlower;
 import net.dragonmaster95.smeargles_decorations.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.data.DataProvider;
 import net.minecraft.data.client.*;
+import net.minecraft.data.client.BlockStateModelGenerator.TintType;
 import net.minecraft.registry.Registries;
+import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.StringIdentifiable;
+import net.minecraft.util.math.Direction;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.function.BiConsumer;
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
@@ -83,25 +92,19 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.ROTOM_MOW_PURPLE);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.ROTOM_MOW_MAGENTA);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.ROTOM_MOW_PINK);
-        registerRotomHeat(blockStateModelGenerator,ModBlocks.ROTOM_HEAT_ROTOM);
-        registerRotomHeat(blockStateModelGenerator,ModBlocks.ROTOM_HEAT_SHINY);
-        registerRotomHeat(blockStateModelGenerator,ModBlocks.ROTOM_HEAT_POKEDEX);
-        registerRotomHeat(blockStateModelGenerator,ModBlocks.ROTOM_HEAT_WHITE);
-        registerRotomHeat(blockStateModelGenerator,ModBlocks.ROTOM_HEAT_LIGHT_GRAY);
-        registerRotomHeat(blockStateModelGenerator,ModBlocks.ROTOM_HEAT_GRAY);
-        registerRotomHeat(blockStateModelGenerator,ModBlocks.ROTOM_HEAT_BLACK);
-        registerRotomHeat(blockStateModelGenerator,ModBlocks.ROTOM_HEAT_BROWN);
-        registerRotomHeat(blockStateModelGenerator,ModBlocks.ROTOM_HEAT_RED);
-        registerRotomHeat(blockStateModelGenerator,ModBlocks.ROTOM_HEAT_ORANGE);
-        registerRotomHeat(blockStateModelGenerator,ModBlocks.ROTOM_HEAT_YELLOW);
-        registerRotomHeat(blockStateModelGenerator,ModBlocks.ROTOM_HEAT_LIME);
-        registerRotomHeat(blockStateModelGenerator,ModBlocks.ROTOM_HEAT_GREEN);
-        registerRotomHeat(blockStateModelGenerator,ModBlocks.ROTOM_HEAT_CYAN);
-        registerRotomHeat(blockStateModelGenerator,ModBlocks.ROTOM_HEAT_LIGHT_BLUE);
-        registerRotomHeat(blockStateModelGenerator,ModBlocks.ROTOM_HEAT_BLUE);
-        registerRotomHeat(blockStateModelGenerator,ModBlocks.ROTOM_HEAT_PURPLE);
-        registerRotomHeat(blockStateModelGenerator,ModBlocks.ROTOM_HEAT_MAGENTA);
-        registerRotomHeat(blockStateModelGenerator,ModBlocks.ROTOM_HEAT_PINK);
+
+        /*for (Block block: ModBlocks.ROTOM_HEAT_BLOCKS) {
+            registerRotomHeat(blockStateModelGenerator, block);
+        }*/
+
+        registerPottableTwoStateFlower(blockStateModelGenerator,ModBlocks.FLOETTE_WHITE,ModBlocks.FLOETTE_WHITE_POTTED,BlockStateModelGenerator.TintType.NOT_TINTED);
+        registerPottableTwoStateFlower(blockStateModelGenerator,ModBlocks.FLOETTE_RED,ModBlocks.FLOETTE_RED_POTTED,BlockStateModelGenerator.TintType.NOT_TINTED);
+        registerPottableTwoStateFlower(blockStateModelGenerator,ModBlocks.FLOETTE_ORANGE,ModBlocks.FLOETTE_ORANGE_POTTED,BlockStateModelGenerator.TintType.NOT_TINTED);
+        registerPottableTwoStateFlower(blockStateModelGenerator,ModBlocks.FLOETTE_YELLOW,ModBlocks.FLOETTE_YELLOW_POTTED,BlockStateModelGenerator.TintType.NOT_TINTED);
+        registerPottableTwoStateFlower(blockStateModelGenerator,ModBlocks.FLOETTE_BLUE,ModBlocks.FLOETTE_BLUE_POTTED,BlockStateModelGenerator.TintType.NOT_TINTED);
+        registerPottableTwoStateFlower(blockStateModelGenerator,ModBlocks.FLOETTE_PINK,ModBlocks.FLOETTE_PINK_POTTED,BlockStateModelGenerator.TintType.NOT_TINTED);
+        registerPottableTwoStateFlower(blockStateModelGenerator,ModBlocks.FLOETTE_AZ,ModBlocks.FLOETTE_AZ_POTTED,BlockStateModelGenerator.TintType.NOT_TINTED);
+
         registerRotomFan(blockStateModelGenerator,ModBlocks.ROTOM_FAN_ROTOM);
         registerRotomFan(blockStateModelGenerator,ModBlocks.ROTOM_FAN_SHINY);
         registerRotomFan(blockStateModelGenerator,ModBlocks.ROTOM_FAN_POKEDEX);
@@ -150,6 +153,78 @@ public class ModModelProvider extends FabricModelProvider {
     protected void registerWoolAndCarpet(BlockStateModelGenerator generator, Block wool, Block carpet) {
         generator.registerNorthDefaultHorizontalRotation(wool);
         generator.registerNorthDefaultHorizontalRotation(carpet);
+    }
+
+    /*
+    protected void registerMedicineBottles(BlockStateModelGenerator generator, Block block) {
+        Identifier identifier = ModelIds.getBlockModelId(block);
+        MultipartBlockStateSupplier multipartBlockStateSupplier = MultipartBlockStateSupplier.create(block);
+        List.of(
+                Pair.of(Direction.NORTH, VariantSettings.Rotation.R0),
+                Pair.of(Direction.EAST, VariantSettings.Rotation.R90),
+                Pair.of(Direction.SOUTH, VariantSettings.Rotation.R180),
+                Pair.of(Direction.WEST, VariantSettings.Rotation.R270)
+        )
+        .forEach(
+            pair -> {
+                Direction direction = (Direction)pair.getFirst();
+                VariantSettings.Rotation rotation = (VariantSettings.Rotation)pair.getSecond();
+                When.PropertyCondition propertyCondition = When.create().set(Properties.HORIZONTAL_FACING, direction);
+                multipartBlockStateSupplier.with(
+                    propertyCondition, BlockStateVariant.create().put(VariantSettings.MODEL, identifier).put(VariantSettings.Y, rotation).put(VariantSettings.UVLOCK, true)
+                );
+                this.supplyMedicineModels(multipartBlockStateSupplier, propertyCondition, rotation);
+            }
+        );
+        generator.blockStateCollector.accept(multipartBlockStateSupplier);
+    }
+
+    public final void supplyMedicineModels(
+            MultipartBlockStateSupplier blockStateSupplier, When.PropertyCondition facingCondition, VariantSettings.Rotation rotation
+    ) {
+        List.of(
+                        Pair.of(Properties.SLOT_0_OCCUPIED, Models.TEMPLATE_CHISELED_BOOKSHELF_SLOT_TOP_LEFT),
+                        Pair.of(Properties.SLOT_1_OCCUPIED, Models.TEMPLATE_CHISELED_BOOKSHELF_SLOT_TOP_MID),
+                        Pair.of(Properties.SLOT_2_OCCUPIED, Models.TEMPLATE_CHISELED_BOOKSHELF_SLOT_TOP_RIGHT),
+                        Pair.of(Properties.SLOT_3_OCCUPIED, Models.TEMPLATE_CHISELED_BOOKSHELF_SLOT_BOTTOM_LEFT),
+                        Pair.of(Properties.SLOT_4_OCCUPIED, Models.TEMPLATE_CHISELED_BOOKSHELF_SLOT_BOTTOM_MID),
+                        Pair.of(Properties.SLOT_5_OCCUPIED, Models.TEMPLATE_CHISELED_BOOKSHELF_SLOT_BOTTOM_RIGHT)
+                )
+                .forEach(pair -> {
+                    BooleanProperty booleanProperty = (BooleanProperty)pair.getFirst();
+                    Model model = (Model)pair.getSecond();
+                    this.supplyMedicineModel(blockStateSupplier, facingCondition, rotation, booleanProperty, model, true);
+                    this.supplyMedicineModel(blockStateSupplier, facingCondition, rotation, booleanProperty, model, false);
+                });
+    }
+
+    public final void supplyMedicineModel(
+            MultipartBlockStateSupplier blockStateSupplier,
+            When.PropertyCondition facingCondition,
+            VariantSettings.Rotation rotation,
+            BooleanProperty property,
+            Model model,
+            boolean occupied
+    ) {
+        String string = occupied ? "_occupied" : "_empty";
+        TextureMap textureMap = new TextureMap().put(TextureKey.TEXTURE, TextureMap.getSubId(Blocks.CHISELED_BOOKSHELF, string));
+        blockStateSupplier.with(
+                When.allOf(facingCondition, When.create().set(property, occupied)),
+                BlockStateVariant.create().put(VariantSettings.MODEL, identifier).put(VariantSettings.Y, rotation)
+        );
+    }
+    */
+
+    protected void registerPottableTwoStateFlower(BlockStateModelGenerator generator, Block flower, Block potted_flower, TintType tintType) {
+        generator.registerGeneric(potted_flower);
+        Identifier id = Registries.BLOCK.getId(flower);
+        Identifier id1 = id.withPath((UnaryOperator<String>)(path -> "block/" + path));
+        Identifier id2 = id.withPath((UnaryOperator<String>)(path -> "block/" + path + "_bed"));
+        generator.blockStateCollector.accept(
+                VariantsBlockStateSupplier.create(flower)
+                        .coordinate(createBooleanModelMap(TwoStateFlower.FLOWER_BED, id2, id1))
+                        .coordinate(createNorthDefaultHorizontalRotationStates())
+        );
     }
 
     protected void registerRotomFan(BlockStateModelGenerator generator, Block fan) {
