@@ -1,0 +1,7 @@
+{
+	"credit": "Made with Blockbench by dragonmaster95",
+	"textures": {
+		"0": "smeargles-decorations:block/spin_tile/frlg/west",
+		"particle": "smeargles-decorations:block/spin_tile/frlg/west"
+	}
+}
